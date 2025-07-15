@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>In Tem Kiện (Editable Table)</title>
+    <link rel="stylesheet" href=".styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+      }
+      .navbar,
+      .header,
+      .footer {
+        padding: 10px 20px;
+      }
+      .navbar {
+        background: #b90000;
+      }
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .header {
+        background: white;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .logo {
+        width: 70px;
+      }
+      h1 {
+        margin: 0;
+      }
+      .main-content {
+        padding: 20px;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      th,
+      td {
+        padding: 10px 8px;
+        border: 1px solid #e0e0e0;
+        vertical-align: top;
+        word-break: break-word;
+        font-size: 14px;
+      }
+      th {
+        background-color: #f0f0f0;
+        text-align: left;
+        font-weight: bold;
+        color: #333;
+        white-space: nowrap;
+      }
+      tr:hover {
+        background-color: #f9f9f9;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="file"] {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.4;
+        display: block;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 50px;
+        height: auto;
+        overflow: hidden;
+      }
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+      }
+      input[readonly],
+      textarea[readonly] {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #495057;
+        cursor: not-allowed;
+      }
+      input[readonly]:focus,
+      textarea[readonly]:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .col-checkbox {
+        width: 40px;
+        min-width: 30px;
+        text-align: center;
+      }
+      .col-id {
+        width: 130px;
+        min-width: 110px;
+      }
+      .col-description {
+        width: auto;
+        min-width: 150px;
+      }
+      .col-boq-fixed {
+        width: 155px;
+        min-width: 140px;
+        max-width: 180px;
+      }
+      .col-material-id {
+        width: 135px;
+        min-width: 120px;
+      }
+      .col-quantity-unit {
+        width: 65px;
+        min-width: 50px;
+        text-align: center;
+      }
+      .col-quantity-unit input[type="text"],
+      .col-quantity-unit input[type="number"] {
+        width: 100%;
+        padding: 4px;
+        font-size: 13px;
+      }
+      .col-action {
+        width: 90px;
+        min-width: 80px;
+      }
+      td:nth-child(14) {
+        text-align: center;
+      }
+      .image-preview {
+        max-width: 100%;
+        max-height: 100px;
+        display: block;
+        margin: 0 auto 5px auto;
+        border-radius: 4px;
+        object-fit: contain;
+      }
+      .print-button-container {
+        margin-top: 20px;
+        padding: 0 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+          <li><a href="index.html">Dự án</a></li>
+        <li><a href="in_kien.html">In tem kiện</a></li>
+        <li><a href="phieu.html">Lập phiếu yêu cầu giao hàng</a></li>
+        <li><a href="giao_viec.html">Giao việc</a></li>
+        <li><a href="khai_bao.html">Khai báo thực tế</a></li>
+        <li><a href="ton_kho_nha_may.html">Tồn kho nhà máy</a></li>
+        <li><a href="ton_kho_cong_trinh.html">Tồn kho công trình</a></li>
+         <li><a href="qr.html">Quét mã QR</a></li>
+      </ul>
+    </nav>
+
+    <header class="header">
+      <img src="./images/logo.png" alt="AA Logo" class="logo" />
+      <div>
+        <h1 style="color: #b90000; font-size: 18px">
+          CÔNG TY CỔ PHẦN XÂY DỰNG KIẾN TRÚC AA
+        </h1>
+        <!-- <p style="font-size: 13px; color: #666">
+          Interior Solutions Since 1989
+        </p> -->
+    </header>
+
+    <main class="main-content">
+        
+      <h2>Thông tin tem kiện</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="col-checkbox">
+              <input
+                type="checkbox"
+                id="selectAllCheckboxes"
+                title="Chọn tất cả"
+              />
+            </th>
+            <th class="col-id">Lệnh SX</th>
+            <th class="col-id">Mã nhà máy</th>
+            <th class="col-id">Mã DA</th>
+            <th class="col-description">Tên DA</th>
+            <th class="col-boq-fixed">BOQ</th>
+            <th class="col-material-id">Material</th>
+            <th class="col-description">Material Desc</th>
+            <th class="col-quantity-unit">SL</th>
+            <th class="col-quantity-unit">UOM</th>
+            <th class="col-quantity-unit">SP/kiện</th>
+            <th class="col-quantity-unit">Số kiện</th>
+            <th class="col-description">Ghi chú</th>
+            <th class="col-action">Phụ kiện</th>
+            <th class="col-action">Hình ảnh</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </main>
+
+    <footer
+      class="footer"
+      style="background: #222; color: white; text-align: center"
+    >
+      &copy; 2025 AA Corporation. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

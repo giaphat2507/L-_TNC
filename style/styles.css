@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: #b90000;
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.navbar li a:hover {
+  text-decoration: underline;
+  color: #ffe0e0;
+}
+
+/* --- HEADER --- */
+.header {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b90000;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+/* --- MAIN --- */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* --- FORM --- */
+.project-form {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.project-form button {
+  padding: 10px 20px;
+  background-color: #b90000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.project-form button:hover {
+  background-color: #a00000;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  accent-color: #b90000; /* Màu đỏ chủ đạo AA */
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+}
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.col-auto-expand {
+    width: auto;
+    min-width: 140px; /* Reduced from 160px for more space */
+}
+input[readonly],
+textarea[readonly] {
+  background-color: #e9ecef; /* Màu nền xám nhạt */
+  border-color: #ced4da; /* Viền hơi sẫm hơn */
+  color: #495057; /* Màu chữ hơi đậm hơn */
+  cursor: not-allowed; /* Biểu tượng chuột "không cho phép" */
+}
+input[readonly]:focus,
+textarea[readonly]:focus {
+  outline: none;
+  box-shadow: none;
+}
+.image-preview {
+    max-width: 100%;
+    max-height: 100px; /* Giới hạn chiều cao */
+    display: block;
+    margin: 0 auto 5px auto; /* Căn giữa và tạo khoảng cách */
+    border-radius: 4px;
+    object-fit: contain; /* Đảm bảo hình ảnh vừa vặn mà không bị cắt */
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-form {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+}

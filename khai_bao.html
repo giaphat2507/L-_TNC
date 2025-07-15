@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Khai Báo Thực Tế</title>
+
+    <!-- ✓ Kiểu dáng tái sử dụng từ các trang trước -->
+    <link rel="stylesheet" href="./style/styles.css" />
+    <style>
+      /* chỉ những thứ bổ sung – các lớp gốc (navbar, header …) lấy từ style.css */
+      .main-content {
+        padding: 20px;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background: #fff;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        font-size: 14px;
+      }
+      th {
+        background: #eee;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      input[type="time"],
+      input[type="date"],
+      input[type="number"],
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 13px;
+      }
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        vertical-align: middle;
+      }
+      tr:hover {
+        background: #f9f9f9;
+      }
+      .btn-action {
+        margin-top: 15px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .btn-action:hover {
+        background: #0056b3;
+      }
+      button {
+        padding: 8px 10px;
+        padding-top: 1px;
+        background: #b90000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== NAVBAR giống các trang khác ===== -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Dự án</a></li>
+        <li><a href="in_kien.html">In tem kiện</a></li>
+        <li><a href="phieu.html">Lập phiếu yêu cầu giao hàng</a></li>
+        <li><a href="giao_viec.html">Giao việc</a></li>
+        <li><a href="khai_bao.html">Khai báo thực tế</a></li>
+        <li><a href="ton_kho_nha_may.html">Tồn kho nhà máy</a></li>
+        <li><a href="ton_kho_cong_trinh.html">Tồn kho công trình</a></li>
+         <li><a href="qr.html">Quét mã QR</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <img src="./images/logo.png" alt="AA Logo" class="logo" />
+      <div>
+        <h1 style="color: #b90000; font-size: 18px">
+          CÔNG TY CỔ PHẦN XÂY DỰNG KIẾN TRÚC AA
+        </h1>
+        <!-- <p style="font-size: 13px; color: #666">
+          Interior Solutions Since 1989
+        </p> -->
+      </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content">
+      <!-- Thêm vào trong <main class="main-content"> phía trước <table> -->
+      <div class="form-section" style="margin-bottom: 20px">
+        <label for="projectCode"><strong>Mã dự án</strong></label>
+        <select id="projectCode">
+          <option value="AT224-023">AT224-023</option>
+        </select>
+
+        <label for="projectName"><strong>Tên dự án</strong></label>
+        <input type="text" id="projectName" readonly />
+        <button type="submit">Tìm kiếm</button>
+      </div>
+
+      <h2>Khai báo thực tế</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAll" /></th>
+            <th>Mã kiện</th>
+            <th>Mã nhà máy</th>
+            <th>Mã thành phẩm</th>
+            <th>Tên thành phẩm</th>
+            <th>SL công nhân</th>
+            <th>Thời gian Start</th>
+            <th>Thời gian End</th>
+            <th>Status</th>
+            <th>Ngày khai báo</th>
+            <th>Người khai báo</th>
+          </tr>
+        </thead>
+        <tbody id="giaoViecTable">
+          <!-- Demo rows -->
+          <tr>
+            <td><input type="checkbox" class="row-check" /></td>
+            <td>K25/00788</td>
+            <td>240706801</td>
+            <td>300000189232</td>
+            <td>TỦ ÁO GỖ MDF</td>
+            <td><input type="number" min="1" value="5" /></td>
+            <td><input type="time" value="" /></td>
+            <td><input type="time" value="" /></td>
+            <td>
+              <select>
+                <option value="Đang SX">Chưa hoàn thành</option>
+                <option value="Hoàn tất">Hoàn thành</option>
+              </select>
+            </td>
+            <td><input type="date" value="" /></td>
+            <td><input type="text" value="" /></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" class="row-check" /></td>
+            <td>K25/00789</td>
+            <td>240706801</td>
+            <td>300000189232</td>
+            <td>TỦ ÁO GỖ MDF</td>
+            <td><input type="number" min="1" value="3" /></td>
+            <td><input type="time" value="" /></td>
+            <td><input type="time" value="" /></td>
+            <td>
+              <select>
+                <option value="Đang SX">Chưa hoàn thành</option>
+                <option value="Hoàn tất">Hoàn thành</option>
+              </select>
+            </td>
+            <td><input type="date" value="" /></td>
+            <td><input type="text" value="" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button id="btnKhaiBao" class="btn-action">Khai báo</button>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      &copy; 2025 AA Corporation. All rights reserved.
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script>
+      // Dữ liệu tên dự án tương ứng
+      const projectData = {
+        "AT224-023": "TCHT NỘI THẤT (PRES.SUITE & VILLA)",
+      };
+
+      // Gán tên dự án khi thay đổi mã dự án
+      const projectCodeSelect = document.getElementById("projectCode");
+      const projectNameInput = document.getElementById("projectName");
+
+      function updateProjectName() {
+        projectNameInput.value = projectData[projectCodeSelect.value] || "";
+      }
+
+      projectCodeSelect.addEventListener("change", updateProjectName);
+
+      // Gọi ngay lúc load để hiện đúng tên
+      updateProjectName();
+
+      // Checkbox chọn tất
+      document
+        .getElementById("selectAll")
+        .addEventListener("change", function () {
+          document
+            .querySelectorAll(".row-check")
+            .forEach((cb) => (cb.checked = this.checked));
+        });
+
+      // Nút khai báo
+      document
+        .getElementById("btnKhaiBao")
+        .addEventListener("click", function () {
+          alert("Khai báo thành công");
+        });
+    </script>
+  </body>
+</html>
