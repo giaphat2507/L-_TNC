@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>In Tem Kiện (Editable Table)</title>
+    <title>In Tem Kiện</title>
     <link rel="stylesheet" href=".styles.css" />
     <style>
       body {
@@ -164,6 +164,7 @@
         padding: 0 20px;
         text-align: left;
       }
+      
     </style>
   </head>
   <body>
@@ -195,6 +196,18 @@
     <main class="main-content">
         
       <h2>Thông tin tem kiện</h2>
+        <div class="form-section" style="margin-bottom: 20px">
+        <label for="projectCode"><strong>Lệnh sản xuất</strong></label>
+        <select id="projectCode">
+          <option value="1000008354">1000008354</option>
+          <option value="1000010012">1000010012</option>
+          <option value="1000010013">1000010013</option>
+        </select>
+
+        <!-- <label for="projectName"><strong>Tên dự án</strong></label>
+        <input type="text" id="projectName" readonly /> -->
+        <button type="submit">Tìm kiếm</button>
+      </div>
       <table>
         <thead>
           <tr>
