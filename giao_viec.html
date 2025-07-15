@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Giao Việc</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .navbar {
+        background-color: #b90000;
+        padding: 10px 20px;
+      }
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: white;
+        padding: 15px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .logo {
+        width: 60px;
+      }
+      h1 {
+        font-size: 18px;
+        color: #b90000;
+        margin: 0;
+      }
+      p {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+      }
+      .main-content {
+        padding: 20px;
+      }
+      .form-section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        background: white;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+        font-size: 13px;
+      }
+      th {
+        background-color: #eee;
+      }
+      .footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+      .action-button {
+        background-color: #28a745; /* xanh lá */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s ease;
+      }
+      .action-button:hover {
+        background-color: #218838;
+      }
+      button {
+        padding: 8px 10px;
+        padding-top: 2px;
+        background: #b90000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #a80000;
+      }
+
+      input[type="time"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        padding: 6px 8px;
+        font-size: 13px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #fff;
+      }
+
+      input[type="time"]:focus,
+      input[type="date"]:focus,
+      input[type="number"]:focus,
+      select:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Dự án</a></li>
+        <li><a href="in_kien.html">In tem kiện</a></li>
+        <li><a href="phieu.html">Lập phiếu yêu cầu giao hàng</a></li>
+        <li><a href="giao_viec.html">Giao việc</a></li>
+        <li><a href="khai_bao.html">Khai báo thực tế</a></li>
+        <li><a href="ton_kho_nha_may.html">Tồn kho nhà máy</a></li>
+        <li><a href="ton_kho_cong_trinh.html">Tồn kho công trình</a></li>
+         <li><a href="qr.html">Quét mã QR</a></li>
+         <li><a href="report.html">Thống kê</a></li>
+      </ul>
+    </nav>
+
+    <header class="header">
+      <img src="./images/logo.png" alt="AA Logo" class="logo" />
+      <div>
+        <h1>CÔNG TY CỔ PHẦN XÂY DỰNG KIẾN TRÚC AA</h1>
+        <!-- <p>Interior Solutions Since 1989</p> -->
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section">
+        <h2>Thông tin Dự án</h2>
+        <label for="projectCode">Mã dự án</label>
+        <input type="text" id="projectCode" value="AT224-023" readonly />
+
+        <label for="projectName">Tên dự án</label>
+        <input
+          type="text"
+          id="projectName"
+          value="TCHT NỘI THẤT (PRES.SUITE & VILLA)"
+          readonly
+        />
+        <button type="submit">Tìm kiếm</button>
+      </section>
+
+      <section class="form-section">
+        <h2>Danh sách giao việc</h2>
+        <table>
+          <thead>
+            <tr>
+              <!-- <th>Lệnh sản xuất</th> -->
+              <th><input type="checkbox" id="selectAll" /></th>
+              <!-- Checkbox tổng -->
+              <th>Mã nhà máy</th>
+              <th>Mã thành phẩm</th>
+              <th>Tên thành phẩm</th>
+              <th>Mã kiện</th>
+              <th>Số kiện</th>
+              <th>Số lượng</th>
+              <th>Đơn vị tính</th>
+              <th>Khu vực</th>
+              <th>Thời gian Start</th>
+              <th>Thời gian End</th>
+              <th>Ngày giao việc</th>
+              <th>Tổ</th>
+              <th>SL công nhân</th>
+            </tr>
+          </thead>
+          <tbody id="giaoViecTable">
+            <tr>
+              <!-- <td>1000008354</td> -->
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td>240301184</td>
+              <td>300000189232</td>
+              <td>TỦ ÁO GỖ MDF</td>
+              <td>K25/00788</td>
+              <td>1/3</td>
+              <td>10</td>
+              <td>PCS</td>
+              <td>Khu A</td>
+              <td><input type="time" value="" /></td>
+              <td><input type="time" value="" /></td>
+              <td><input type="date" value="" /></td>
+              <td>
+                <select>
+                  <option value="Tổ 1">Tổ 1</option>
+                  <option value="Tổ 2">Tổ 2</option>
+                  <option value="Tổ 3">Tổ 3</option>
+                  <option value="Tổ 4">Tổ 4</option>
+                  <option value="Tổ 5">Tổ 5</option>
+                </select>
+              </td>
+              <td><input type="number" value="" min="2" /></td>
+            </tr>
+            <tr>
+              <!-- <td>1000008354</td> -->
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td>241212466</td>
+              <td>300000189232</td>
+              <td>TỦ ÁO GỖ MDF</td>
+              <td>K25/00789</td>
+              <td>2/3</td>
+              <td>10</td>
+              <td>PCS</td>
+              <td>Khu A</td>
+              <td><input type="time" value="" /></td>
+              <td><input type="time" value="" /></td>
+              <td><input type="date" value="" /></td>
+              <td>
+                <select>
+                  <option value="Tổ 1">Tổ 1</option>
+                  <option value="Tổ 2">Tổ 2</option>
+                  <option value="Tổ 3">Tổ 3</option>
+                  <option value="Tổ 4">Tổ 4</option>
+                  <option value="Tổ 5">Tổ 5</option>
+                </select>
+              </td>
+              <td><input type="number" value="" min="2" /></td>
+            </tr>
+            <tr>
+              <!-- <td>1000008354</td> -->
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td>241212465</td>
+              <td>300000189232</td>
+              <td>TỦ ÁO GỖ MDF</td>
+              <td>K25/00790</td>
+              <td>3/3</td>
+              <td>10</td>
+              <td>PCS</td>
+              <td>Khu A</td>
+              <td><input type="time" value="" /></td>
+              <td><input type="time" value="" /></td>
+              <td><input type="date" value="" /></td>
+              <td>
+                <select>
+                  <option value="Tổ 1">Tổ 1</option>
+                  <option value="Tổ 2">Tổ 2</option>
+                  <option value="Tổ 3">Tổ 3</option>
+                  <option value="Tổ 4">Tổ 4</option>
+                  <option value="Tổ 5">Tổ 5</option>
+                </select>
+              </td>
+              <td><input type="number" value="" min="2" /></td>
+            </tr>
+          </tbody>
+          <section class="form-section button-container">
+            <button id="btnAssignTask" class="action-button" type="button">
+              Giao việc
+            </button>
+          </section>
+        </table>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btnAssignTask = document.getElementById("btnAssignTask");
+
+        if (btnAssignTask) {
+          btnAssignTask.addEventListener("click", function () {
+            alert("Giao việc thành công");
+          });
+        }
+      });
+    </script>
+    <footer class="footer">
+      &copy; 2025 AA Corporation. All rights reserved.
+    </footer>
+  </body>
+</html>
